@@ -8,9 +8,15 @@ export default function App() {
   return ( <>
     <View style={styles.header}>
             <Header/>
+            <TabsHeader/>
+
     </View>
+    {/* <View style={styles.tabs}>
+
+    </View> */}
     <View style={styles.container}>
-    <Card/></View>           
+    <Card/>
+    </View>           
     
 
     
@@ -31,4 +37,5 @@ const styles = StyleSheet.create({
     flex:1,
      alignItems:'center'
   }
+  
 });
