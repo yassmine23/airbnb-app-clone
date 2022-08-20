@@ -4,38 +4,17 @@ import Footer from './components/footer';
 import Card from './components/card';
 import TabsHeader from './components/tabsHeader';
 
+import HomePage from './pages/HomePage'
+
 export default function App() {
-  return ( <>
-    <View style={styles.header}>
-            <Header/>
-            <TabsHeader/>
+  return ( 
+<View>
+<HomePage/>
 
-    </View>
-    {/* <View style={styles.tabs}>
-
-    </View> */}
-    <View style={styles.container}>
-    <Card/>
-    </View>           
+</View>
     
-
     
-
-    <View>
-      <Footer/>
-    </View>
-    </>
   );
 }
 
-const styles = StyleSheet.create({
- 
-  header:{
-    padding:30,
-  },
-  container:{
-    flex:1,
-     alignItems:'center'
-  }
-  
-});
+

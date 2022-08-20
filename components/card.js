@@ -8,6 +8,8 @@ import {
   ScrollView,
   Dimensions,
 } from "react-native";
+import { IconButton } from "react-native-paper";
+
 
 const { width } = Dimensions.get("window");
 const height = width * 0.6;
@@ -25,8 +27,20 @@ export default function MainCard() {
     <>
       <View style={styles.container}>
         <ScrollView pagingEnabled horizontal style={styles.scroll}>
-          {imgs.map((image, index) => (
+          {imgs.map((image, index) => (<>
             <Image key={index} source={{ uri: image }} style={styles.img} />
+            <View>
+        <IconButton
+          icon="cards-heart-outline"
+          size={30}
+          onPress={() => console.log("Pressed")}
+          iconColor='#fff' 
+          style={{position:'absolute', top:10, right:10, }}
+
+        />
+      </View>
+      </>
+
           ))}
         </ScrollView>
         <View style={styles.pagination}>
@@ -46,9 +60,9 @@ export default function MainCard() {
 }
 
 const styles = StyleSheet.create({
-  container: { width, height },
+  container: { width, height ,},
   scroll: { width, height },
-  img: { width, height, resizeMode: "cover" 
+  img: { width, height, resizeMode: 'cover' ,
 },
   pagination: {
     flexDirection: "row",
