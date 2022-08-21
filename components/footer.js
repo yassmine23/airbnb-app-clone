@@ -69,6 +69,9 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-around",
+    borderTopColor:'lightgray',
+     borderStyle:'solid',
+      borderTopWidth:1.5,
   },
 
   span:{

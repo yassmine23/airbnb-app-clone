@@ -10,6 +10,9 @@ import {
 } from "react-native";
 import { IconButton } from "react-native-paper";
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 const { width } = Dimensions.get("window");
 const height = width * 0.6;
 
@@ -21,10 +24,10 @@ const imgs = [
   "https://a0.muscache.com/im/pictures/07ca45f5-6dd9-485f-928e-f6e683a1de31.jpg?im_w=720",
 ];
 
-export default function MainCard() {
+export default function MainCard({ navigation }) {
   return (
     <>
-      <View style={styles.container}>
+      <View style={styles.container} >
         <ScrollView pagingEnabled horizontal style={styles.scroll}>
           {imgs.map((image, index) => (
             <>
@@ -33,7 +36,7 @@ export default function MainCard() {
                 <IconButton
                   icon="cards-heart-outline"
                   size={30}
-                  onPress={() => console.log("Pressed")}
+                  onPress={() => navigation.navigate('details')}
                   iconColor="#fff"
                   style={{ position: "absolute", top: 10, right: 10 }}
                 />

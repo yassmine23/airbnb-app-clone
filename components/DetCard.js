@@ -10,7 +10,8 @@ import {
 } from "react-native";
 import { IconButton, Divider, Avatar, List, Button } from "react-native-paper";
 import MapView from "react-native-maps";
-import Paragraph from "./../node_modules/react-native-paper/lib/typescript/components/Typography/v2/Paragraph.d";
+import { useNavigation } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const { width } = Dimensions.get("window");
 const height = width * 0.6;
@@ -29,6 +30,8 @@ const imgs = [
 ];
 
 export default function DetCard() {
+  const navigation = useNavigation(); 
+
   return (
     <>
       <ScrollView>
@@ -54,7 +57,7 @@ export default function DetCard() {
                   <IconButton
                     icon="tray-arrow-up"
                     size={22}
-                    onPress={() => console.log("Pressed")}
+                    onPress={() => navigation.navigate('Home')}
                     iconColor="#222"
                     style={{
                       position: "absolute",
@@ -808,6 +811,7 @@ export default function DetCard() {
     </>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: { width, height },

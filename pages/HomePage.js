@@ -9,10 +9,10 @@ export default function HomePage() {
   return (
     <>
       <View style={{ flex: 1 }}>
-        {/* <Header />
+        <Header />
         <View>
           <TabsHeader />
-        </View> */}
+        </View>
 
         <ScrollView style={styles.container}>
           <Card />
