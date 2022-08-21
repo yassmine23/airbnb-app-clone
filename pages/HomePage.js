@@ -14,7 +14,7 @@ export default function HomePage() {
             <TabsHeader/>
 
     </View>
-    
+
     <ScrollView style={styles.container}>
     <Card/>
     <Card/>

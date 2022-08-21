@@ -1,17 +1,18 @@
 import { StyleSheet, View, FlatList, ScrollView } from 'react-native';
-import Header from './components/header';
-import Footer from './components/footer';
-import Card from './components/card';
-import TabsHeader from './components/tabsHeader';
+import DetCard from './components/DetCard';
 
 import HomePage from './pages/HomePage'
+import Map from './pages/Map';
 
 export default function App() {
   return ( 
-<View>
-<HomePage/>
+<ScrollView>
+{/* <HomePage/> */}
+<DetCard/>
+{/* <Map/> */}
 
-</View>
+
+</ScrollView>
     
     
   );
