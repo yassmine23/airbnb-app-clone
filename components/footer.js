@@ -11,6 +11,8 @@ export default function Footer() {
           size={26}
           onPress={() => console.log("Pressed")}
           iconColor='gray'
+          style={{marginBottom:0}}
+
 
         />
         <Text style={styles.span}>Explore</Text>
@@ -22,6 +24,8 @@ export default function Footer() {
           size={26}
           onPress={() => console.log("Pressed")}
           iconColor='gray'
+          style={{marginBottom:0}}
+
 
         />
         <Text style={styles.span}>Wishlist</Text>
@@ -33,6 +37,7 @@ export default function Footer() {
           size={26}
           onPress={() => console.log("Pressed")}
           iconColor='gray'
+          style={{marginBottom:0}}
 
         />
 
@@ -45,6 +50,8 @@ export default function Footer() {
           size={26}
           onPress={() => console.log("Pressed")}
           iconColor='gray'
+          style={{marginBottom:0}}
+
 
         />
         <Text style={styles.span}>Inbox</Text>
@@ -56,6 +63,8 @@ export default function Footer() {
           size={26}
           onPress={() => console.log("Pressed")}
           iconColor='gray'
+          style={{marginBottom:0}}
+
 
         />
         <Text style={styles.span}>Profile</Text>
@@ -75,8 +84,9 @@ const styles = StyleSheet.create({
   },
 
   span:{
-    paddingBottom:10,
+    // paddingBottom:10,
     textAlign:'center',
-    color:'gray'
+    color:'gray',
+    position:'relative', bottom:6
   }
 });

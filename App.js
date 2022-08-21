@@ -16,6 +16,8 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomePage}   options={{ title: '' }} />
         <Stack.Screen name="details" component={DetCard} options={{ title: '' }} />
+        <Stack.Screen name="map" component={Map} options={{ title: '' }} />
+
 
 
       </Stack.Navigator>
