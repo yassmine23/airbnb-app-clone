@@ -1,53 +1,45 @@
-import React from 'react'
-import { StyleSheet, View, FlatList, ScrollView } from 'react-native';
-import Header from '../components/header';
-import Footer from '../components/footer';
-import Card from '../components/card';
-import TabsHeader from '../components/tabsHeader';
+import React from "react";
+import { StyleSheet, View, FlatList, ScrollView } from "react-native";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import Card from "../components/card";
+import TabsHeader from "../components/tabsHeader";
 
 export default function HomePage() {
   return (
     <>
-     <View >
-    <View style={styles.header}>
-            <Header/>
-            <TabsHeader/>
+      <View style={{ flex: 1 }}>
+        {/* <Header />
+        <View>
+          <TabsHeader />
+        </View> */}
 
-    </View>
+        <ScrollView style={styles.container}>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </ScrollView>
 
-    <ScrollView style={styles.container}>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-
-
-    </ScrollView>           
-    
-
-    <View style={styles.footer}>
-      <Footer/>
-    </View>
-
-    </View>
+        <Footer />
+      </View>
     </>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
- 
-    header:{
-      padding:30,
-    },
-    container:{
-      flexGrow:1,
+  header: {
+    padding: 30,
+    flex: 1,
+  },
+  container: {
+    flex: 1,
+    height: 200,
     //    alignItems:'center'
-    },
-    footer:{
-        position:'absolute',
-        bottom:0,
-
-    }
-    
-    
-  });
+  },
+  footer: {
+    // position:'absolute',
+    // bottom:0,
+    flex: 1,
+  },
+});

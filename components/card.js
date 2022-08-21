@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import { IconButton } from "react-native-paper";
 
-
 const { width } = Dimensions.get("window");
 const height = width * 0.6;
 
@@ -27,20 +26,19 @@ export default function MainCard() {
     <>
       <View style={styles.container}>
         <ScrollView pagingEnabled horizontal style={styles.scroll}>
-          {imgs.map((image, index) => (<>
-            <Image key={index} source={{ uri: image }} style={styles.img} />
-            <View>
-        <IconButton
-          icon="cards-heart-outline"
-          size={30}
-          onPress={() => console.log("Pressed")}
-          iconColor='#fff' 
-          style={{position:'absolute', top:10, right:10, }}
-
-        />
-      </View>
-      </>
-
+          {imgs.map((image, index) => (
+            <>
+              <Image key={index} source={{ uri: image }} style={styles.img} />
+              <View>
+                <IconButton
+                  icon="cards-heart-outline"
+                  size={30}
+                  onPress={() => console.log("Pressed")}
+                  iconColor="#fff"
+                  style={{ position: "absolute", top: 10, right: 10 }}
+                />
+              </View>
+            </>
           ))}
         </ScrollView>
         <View style={styles.pagination}>
@@ -50,32 +48,37 @@ export default function MainCard() {
         </View>
       </View>
       <View style={styles.details}>
-        <Text style={{fontWeight:'bold'}}>Harlingen, Friesland, Netherlands</Text>
-        <Text style={{color:'gray'}}>professional Host</Text>
-        <Text style={{color:'gray'}}>18-23 sept</Text>
-        <Text  style={{fontWeight:'bold'}}>$250  <Text  style={{fontWeight:'normal'}}>night</Text></Text>
+        <Text style={{ fontWeight: "bold" }}>
+          Harlingen, Friesland, Netherlands
+        </Text>
+        <Text style={{ color: "gray" }}>professional Host</Text>
+        <Text style={{ color: "gray" }}>18-23 sept</Text>
+        <Text style={{ fontWeight: "bold" }}>
+          $250 <Text style={{ fontWeight: "normal" }}>night</Text>
+        </Text>
       </View>
     </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { width, height ,},
+  container: { width, height },
   scroll: { width, height },
-  img: { width, height, resizeMode: 'cover' ,
-},
+  img: { width, height, resizeMode: "cover" },
   pagination: {
     flexDirection: "row",
     position: "absolute",
     bottom: 0,
     alignSelf: "center",
   },
-  pagingText: { 
-    fontSize: 14, 
-    color: "#fff", 
-    margin: 5 
-},
+  pagingText: {
+    fontSize: 14,
+    color: "#fff",
+    margin: 5,
+  },
   details: {
-     width, height,
-     padding: 20 },
+    width,
+    // height,
+    padding: 20,
+  },
 });
