@@ -8,7 +8,7 @@ export default function Profile() {
   return ( <>
     <ScrollView>
       <View style={{ padding: 20 }}>
-        <Avatar.Image size={62} source={require("../assets/rev1.jpg")} />
+        <Avatar.Image size={62} source={require("../assets/rev2.jpg")} />
         <Text style={{ fontSize: 30, fontWeight: "bold", paddingBottom: 5 }}>
           Yasmin
         </Text>
@@ -280,6 +280,8 @@ const styles = StyleSheet.create({
     title:{
         fontSize: 26,
          fontWeight: "bold", 
+         paddingBottom:15,
+         
     },
 
     container:{padding:20},

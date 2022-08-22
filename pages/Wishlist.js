@@ -1,11 +1,11 @@
 import React from 'react'
 import { ScrollView, View, Text, StyleSheet } from "react-native";
 
-export default function Inbox() {
+export default function Wishlist() {
   return (
     <View style={styles.container}>
         <Text style={styles.title}>
-            Inbox
+            Wishlist
         </Text>
 
     </View>

@@ -4,33 +4,140 @@ import DetCard from "./components/DetCard";
 import HomePage from "./pages/HomePage";
 import Map from "./pages/Map";
 import Profile from "./pages/Profile";
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Wishlist from "./pages/Wishlist";
+import Trips from "./pages/Trips";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Inbox from "./pages/Inbox";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { styles } from './node_modules/react-native-actions-sheet/dist/src/styles';
+
+const Tab = createBottomTabNavigator();
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <>
+      {/* <NavigationContainer>
 
-      <Stack.Navigator initialRouteName="profile">
-        <Stack.Screen name="Home" component={HomePage}   options={{ title: '' }} />
-        <Stack.Screen name="details" component={DetCard} options={{ title: '' }} />
-        <Stack.Screen name="map" component={Map} options={{ title: '' }} />
-        <Stack.Screen name="profile" component={Profile} options={{ title: '' }} />
+      // <Stack.Navigator initialRouteName="Home">
+      //   <Stack.Screen name="Home" component={HomePage}   options={{ title: '' }} />
+      //   <Stack.Screen name="details" component={DetCard} options={{ title: '' }} />
+      //   <Stack.Screen name="map" component={Map} options={{ title: '' }} />
+      //   <Stack.Screen name="profile" component={Profile} options={{ title: '' }} />
+      //   <Stack.Screen name="inbox" component={Inbox} options={{ title: '' }} />
 
+      // </Stack.Navigator>
+    </NavigationContainer> */}
 
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
 
+              if (route.name === "Home") {
+                iconName = focused
+                  ? "ios-information-circle"
+                  : "ios-information-circle-outline";
+              } else if (route.name === "Settings") {
+                iconName = focused ? "ios-list-box" : "ios-list";
+              }
 
-      </Stack.Navigator>
-    </NavigationContainer>
-  
+              // You can return any component that you like here!
+              return <Ionicons name={iconName} size={size} color={color} />;
+            },
+            tabBarActiveTintColor: "#E61E4D",
+            tabBarInactiveTintColor: "gray",
+          
+          })}
+        >
+          <Tab.Screen
+            name="home"
+            component={HomePage}
+            options={{
+              title: "",
+              tabBarLabel: "Explore",
 
+              tabBarIcon: () => (
+                <MaterialCommunityIcons
+                  name="magnify"
+                  color="#E61E4D"
+                  size={35}
+                />
+              ),
+            }}
+          />
 
-    // <View style={{flex:1}}>
-    //   <HomePage /> 
-    //   <DetCard/>
-    //    <Map/> 
-    // </View>
+          <Tab.Screen
+            name="Wishlist"
+            component={DetCard}
+            options={{
+              title: "",
+              tabBarLabel: "Wishlist",
+
+              tabBarIcon: () => (
+                <MaterialCommunityIcons
+                  name="heart-outline"
+                  color="#E61E4D"
+                  size={35}
+                />
+              ),
+            }}
+          />
+
+          <Tab.Screen
+            name="trips"
+            component={Trips}
+            options={{
+              title: "",
+              tabBarLabel: "Trips",
+
+              tabBarIcon: () => (
+                <MaterialCommunityIcons
+                  name="airbnb"
+                  color="#E61E4D"
+                  size={35}
+                />
+              ),
+            }}
+          />
+
+          <Tab.Screen
+            name="inbox"
+            component={Inbox}
+            options={{
+              title: "",
+              tabBarLabel: "Inbox",
+
+              tabBarIcon: () => (
+                <MaterialCommunityIcons name="message-outline" color="#E61E4D" size={35} />
+              ),
+            }}
+          />
+
+          <Tab.Screen
+            name="profile"
+            component={Profile}
+            options={{
+              title: "",
+              tabBarLabel: "Profile",
+              
+
+              tabBarIcon: () => (
+                <MaterialCommunityIcons
+                  name="account-circle-outline"
+                  color="#E61E4D"
+                  size={35}
+                />
+              ),
+            }}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </>
   );
 }
