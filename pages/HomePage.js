@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, View, FlatList, ScrollView } from "react-native";
 import Header from "../components/header";
-import Footer from "../components/footer";
 import Card from "../components/card";
 import TabsHeader from "../components/tabsHeader";
 import { Button } from "react-native-paper";
@@ -26,7 +25,6 @@ export default function HomePage({navigation}) {
         style={{width:100, backgroundColor:'#333', paddingVertical:4, position:'absolute', bottom:100, left:'38%'}}>
     Map
   </Button>
-        <Footer />
       </View>
     </>
   );

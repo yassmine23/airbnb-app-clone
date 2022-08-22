@@ -585,11 +585,13 @@ export default function DetCard(navigation) {
           </ScrollView>
           <Button
             mode="outlined"
+            textColor="black"
             style={{
               marginVertical: 20,
               borderRadius: 10,
               padding: 5,
               marginHorizontal: 10,
+              
             }}
           >
             Show all 47 reviews

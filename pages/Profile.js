@@ -1,7 +1,6 @@
 import React from "react";
 import { ScrollView, View, Text, StyleSheet } from "react-native";
 import { Avatar, Divider, IconButton, List } from "react-native-paper";
-import Footer from "../components/footer";
 
 
 export default function Profile() {
@@ -43,7 +42,7 @@ export default function Profile() {
         <Text style={styles.title}>Account Settings</Text>
        <View > 
         <List.Item 
-          title="Personal information" 
+          title="Personal information"  key={1}
           left={(props) => <List.Icon {...props} icon="account-circle-outline" />}
         />
         <IconButton icon="chevron-right" size={35} iconColor="#222" 
@@ -52,7 +51,7 @@ export default function Profile() {
          <Divider bold style={styles.Divider} />
 
          <View > 
-        <List.Item 
+        <List.Item   key={2}
           title="Payments and payouts" 
           left={(props) => <List.Icon {...props} icon="cash-multiple" />}
         />
@@ -62,7 +61,7 @@ export default function Profile() {
          <Divider bold style={styles.Divider} />
 
          <View > 
-        <List.Item 
+        <List.Item  key={3}
           title="Translation" 
           left={(props) => <List.Icon {...props} icon="translate" />}
         />
@@ -72,7 +71,7 @@ export default function Profile() {
          <Divider bold style={styles.Divider} />
 
          <View > 
-        <List.Item 
+        <List.Item   key={4}
           title="Notivications" 
           left={(props) => <List.Icon {...props} icon="bell-outline" />}
         />
@@ -82,7 +81,7 @@ export default function Profile() {
          <Divider bold style={styles.Divider} />
 
          <View > 
-        <List.Item 
+        <List.Item  key={5}
           title="Privacy and sharing" 
           left={(props) => <List.Icon {...props} icon="lock-outline" />}
         />
@@ -92,7 +91,7 @@ export default function Profile() {
          <Divider bold style={styles.Divider} />
 
          <View > 
-        <List.Item 
+        <List.Item  key={6}
           title="Travel for work" 
           left={(props) => <List.Icon {...props} icon="bag-suitcase-outline" />}
         />
@@ -106,7 +105,7 @@ export default function Profile() {
       <View style={styles.container}>
         <Text style={styles.title}>Hosting</Text>
        <View > 
-        <List.Item 
+        <List.Item  key={7}
           title="List your space" 
           left={(props) => <List.Icon {...props} icon="home-outline" />}
         />
@@ -269,7 +268,6 @@ export default function Profile() {
        
     </ScrollView>
 
-    <Footer />
 
     </>
   );

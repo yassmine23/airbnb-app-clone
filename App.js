@@ -12,7 +12,9 @@ import Inbox from "./pages/Inbox";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { styles } from './node_modules/react-native-actions-sheet/dist/src/styles';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -23,40 +25,50 @@ export default function App() {
     <>
       {/* <NavigationContainer>
 
-      // <Stack.Navigator initialRouteName="Home">
-      //   <Stack.Screen name="Home" component={HomePage}   options={{ title: '' }} />
-      //   <Stack.Screen name="details" component={DetCard} options={{ title: '' }} />
-      //   <Stack.Screen name="map" component={Map} options={{ title: '' }} />
-      //   <Stack.Screen name="profile" component={Profile} options={{ title: '' }} />
-      //   <Stack.Screen name="inbox" component={Inbox} options={{ title: '' }} />
+       <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomePage}   options={{ title: '' }} />
+         <Stack.Screen name="details" component={DetCard} options={{ title: '' }} />
+         <Stack.Screen name="map" component={Map} options={{ title: '' }} />
+         <Stack.Screen name="profile" component={Profile} options={{ title: '' }} />
+         <Stack.Screen name="inbox" component={Inbox} options={{ title: '' }} />
 
-      // </Stack.Navigator>
-    </NavigationContainer> */}
+       </Stack.Navigator>
+     </NavigationContainer> */}
 
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
-              let iconName;
+              let iconName
 
               if (route.name === "Home") {
                 iconName = focused
                   ? "ios-information-circle"
                   : "ios-information-circle-outline";
-              } else if (route.name === "Settings") {
+
+              } else if (route.name === "profile") {
                 iconName = focused ? "ios-list-box" : "ios-list";
               }
+             else if (route.name === "inbox") {
+              iconName = focused ? "ios-list-box" : "ios-list";
+            }
+           else if (route.name === "wishlist") {
+            iconName = focused ? "ios-list-box" : "ios-list";
+          }
 
               // You can return any component that you like here!
               return <Ionicons name={iconName} size={size} color={color} />;
+              
+
             },
             tabBarActiveTintColor: "#E61E4D",
             tabBarInactiveTintColor: "gray",
+            
           
           })}
         >
           <Tab.Screen
-            name="home"
+            name="Explore"
             component={HomePage}
             options={{
               title: "",
@@ -98,8 +110,8 @@ export default function App() {
 
               tabBarIcon: () => (
                 <MaterialCommunityIcons
-                  name="airbnb"
-                  color="#E61E4D"
+                  name="layers-triple-outline"
+                  color= "#E61E4D"
                   size={35}
                 />
               ),
