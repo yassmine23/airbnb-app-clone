@@ -13,7 +13,6 @@ export default function Trips() {
         <Text
           style={{
             fontSize: 26,
-            //  fontWeight: "bold",
             paddingVertical: 20,
           }}
         >

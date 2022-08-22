@@ -86,7 +86,7 @@ export default function App() {
 
           <Tab.Screen
             name="Wishlist"
-            component={DetCard}
+            component={Wishlist}
             options={{
               title: "",
               tabBarLabel: "Wishlist",
