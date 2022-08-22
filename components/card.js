@@ -7,6 +7,7 @@ import {
   Image,
   ScrollView,
   Dimensions,
+  TouchableHighlight
 } from "react-native";
 import { IconButton } from "react-native-paper";
 
@@ -28,6 +29,8 @@ export default function MainCard({ navigation }) {
   return (
     <>
       <View style={styles.container} >
+      <TouchableHighlight onPress={() => navigation.navigate('details')}>
+
         <ScrollView pagingEnabled horizontal style={styles.scroll}>
           {imgs.map((image, index) => (
             <>
@@ -36,7 +39,7 @@ export default function MainCard({ navigation }) {
                 <IconButton
                   icon="cards-heart-outline"
                   size={30}
-                  onPress={() => navigation.navigate('details')}
+                  
                   iconColor="#fff"
                   style={{ position: "absolute", top: 10, right: 10 }}
                 />
@@ -44,6 +47,8 @@ export default function MainCard({ navigation }) {
             </>
           ))}
         </ScrollView>
+        </TouchableHighlight>
+
         <View style={styles.pagination}>
           {imgs.map((i, k) => (
             <Text style={styles.pagingText}>⬤</Text>
