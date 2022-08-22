@@ -4,15 +4,16 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import Card from "../components/card";
 import TabsHeader from "../components/tabsHeader";
+import { Button } from "react-native-paper";
 
-export default function HomePage() {
+export default function HomePage({navigation}) {
   return (
     <>
       <View style={{ flex: 1 }}>
-        {/* <Header />
+        <Header />
         <View>
           <TabsHeader />
-        </View> */}
+        </View>
 
         <ScrollView style={styles.container}>
           <Card />
@@ -20,7 +21,11 @@ export default function HomePage() {
           <Card />
           <Card />
         </ScrollView>
-
+        <Button icon="map" mode="contained"  onPress={() => navigation.navigate('map')}
+ 
+        style={{width:100, backgroundColor:'#333', paddingVertical:4, position:'absolute', bottom:100, left:'38%'}}>
+    Map
+  </Button>
         <Footer />
       </View>
     </>

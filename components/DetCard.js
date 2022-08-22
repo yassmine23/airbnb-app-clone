@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { IconButton, Divider, Avatar, List, Button } from "react-native-paper";
 import MapView from "react-native-maps";
-import Paragraph from "./../node_modules/react-native-paper/lib/typescript/components/Typography/v2/Paragraph.d";
+
 
 const { width } = Dimensions.get("window");
 const height = width * 0.6;
@@ -28,7 +28,8 @@ const imgs = [
   "https://a0.muscache.com/im/pictures/a9159bd8-cc76-42f7-86c8-368b10b0bea1.jpg?im_w=720",
 ];
 
-export default function DetCard() {
+export default function DetCard(navigation) {
+
   return (
     <>
       <ScrollView>
@@ -54,7 +55,7 @@ export default function DetCard() {
                   <IconButton
                     icon="tray-arrow-up"
                     size={22}
-                    onPress={() => console.log("Pressed")}
+                    onPress={() => navigation.navigate('Home')}
                     iconColor="#222"
                     style={{
                       position: "absolute",
@@ -785,7 +786,8 @@ export default function DetCard() {
           bold
           style={{ position: "relative", left: 35, width: "80%" }}
         />
-
+        
+         {/* report */}
         <View style={styles.details}>
         <List.Item titleStyle={{textDecorationLine:'underline'}}
          title="Report this listing"
@@ -808,6 +810,7 @@ export default function DetCard() {
     </>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: { width, height },

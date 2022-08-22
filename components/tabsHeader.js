@@ -147,14 +147,19 @@ const styles = StyleSheet.create({
   tabs: {
     flexDirection: "row",
     alignItems: "center",
-    marginVertical: 5,
+    borderBottomColor:'lightgray',
+     borderStyle:'solid',
+      borderBottomWidth:1.5,
+      
   },
   avatar: {
-    backgroundColor: "#fff",
+    backgroundColor: "transparent",
     alignSelf: "center",
   },
   tab: {
-    paddingHorizontal: 8,
+    paddingHorizontal: 3,
+    paddingVertical:15, 
+    marginHorizontal:8
   },
 });
 

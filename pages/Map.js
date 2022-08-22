@@ -6,6 +6,8 @@ import TabsHeader from "../components/tabsHeader";
 
 
 
+
+
 export default function Map() {
   return (
     <View style={{ flex: 1 }}>
