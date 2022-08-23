@@ -16,10 +16,8 @@ export default function HomePage({navigation}) {
         </View>
 
         <ScrollView style={styles.container}>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Card navigation={navigation} />
+         
         </ScrollView>
         <Button icon="map" mode="contained"  onPress={() => navigation.navigate('map')}
  
