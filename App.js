@@ -18,11 +18,14 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { styles } from "./node_modules/react-native-actions-sheet/dist/src/styles";
 import Inbox from "./pages/Inbox";
+import Login from './components/login/login';
 
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
   const [newArr,setNewArr]=useState([])
   const getAllMobiles = () => {
 
@@ -148,14 +151,14 @@ export default function App() {
             ),
           }}
         />
-
+ {isLoggedIn ?
         <Tab.Screen
           name="profile"
           component={Profile}
           options={{
             title: "",
             tabBarLabel: "Profile",
-
+            headerShown: false,
             tabBarIcon: () => (
               <MaterialCommunityIcons
                 name="account-circle-outline"
@@ -164,7 +167,24 @@ export default function App() {
               />
             ),
           }}
-        />
+        />: 
+        <Tab.Screen
+        name="Login"
+        component={Login}
+        options={{
+          title: "",
+          tabBarLabel: "Login",
+          headerShown: false,
+          tabBarIcon: () => (
+            <MaterialCommunityIcons
+              name="account-circle-outline"
+              color="#E61E4D"
+              size={35}
+            />
+          ),
+        }}
+      />
+      }
       </Tab.Navigator>
     );
   };

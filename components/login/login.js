@@ -5,6 +5,14 @@ import { Button } from 'react-native-paper';
 const Login = () => {
   const [text, setText] = React.useState("");
   const [Password, setPassword] = React.useState("");
+  const changes=(e)=>{
+    if(e.target.name === "text"){
+      setText(e.target.value)
+    }else if(e.target.name === "Password"){
+      setPassword(e.target.value)
+    
+    }
+  }
 
   return (
     <View style={styles.container}>
