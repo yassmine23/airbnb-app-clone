@@ -16,9 +16,13 @@ export default function HomePage({ navigation }) {
 
         <ScrollView style={styles.container}>
           <Card navigation={navigation} />
+<<<<<<< HEAD
           <Card navigation={navigation} />
           <Card navigation={navigation} />
           <Card navigation={navigation} />
+=======
+         
+>>>>>>> AhmedMaged
         </ScrollView>
         <Button
           icon="map"

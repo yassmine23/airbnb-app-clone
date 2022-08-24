@@ -28,7 +28,9 @@ const imgs = [
   "https://a0.muscache.com/im/pictures/a9159bd8-cc76-42f7-86c8-368b10b0bea1.jpg?im_w=720",
 ];
 
-export default function DetCard(navigation) {
+export default function DetCard({route}, navigation) {
+  const x = route.params.detail
+  const d = new Date();
 
   return (
     <>
@@ -36,7 +38,207 @@ export default function DetCard(navigation) {
         <View style={styles.container}>
           {/* carousel */}
           <ScrollView pagingEnabled horizontal style={styles.scroll}>
-            {imgs.map((image, index) => (
+          <Image  source={{ uri: x.Url }} style={styles.img} />
+                <View>
+                  <IconButton
+                    icon="cards-heart-outline"
+                    size={22}
+                    onPress={() => console.log("Pressed")}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 20,
+                      backgroundColor: "white",
+                    }}
+                  />
+                  <IconButton
+                    icon="tray-arrow-up"
+                    size={22}
+                    onPress={() => navigation.navigate('Home')}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 70,
+                      backgroundColor: "white",
+                    }}
+                  />
+
+                  <IconButton
+                    icon="arrow-left"
+                    size={22}
+                    onPress={() => console.log("Pressed")}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 350,
+                      backgroundColor: "white",
+                    }}
+                  />
+                </View>
+          <Image  source={{ uri: x.Url2 }} style={styles.img} />
+                <View>
+                  <IconButton
+                    icon="cards-heart-outline"
+                    size={22}
+                    onPress={() => console.log("Pressed")}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 20,
+                      backgroundColor: "white",
+                    }}
+                  />
+                  <IconButton
+                    icon="tray-arrow-up"
+                    size={22}
+                    onPress={() => navigation.navigate('Home')}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 70,
+                      backgroundColor: "white",
+                    }}
+                  />
+
+                  <IconButton
+                    icon="arrow-left"
+                    size={22}
+                    onPress={() => console.log("Pressed")}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 350,
+                      backgroundColor: "white",
+                    }}
+                  />
+                </View>
+          <Image  source={{ uri: x.Url3 }} style={styles.img} />
+                <View>
+                  <IconButton
+                    icon="cards-heart-outline"
+                    size={22}
+                    onPress={() => console.log("Pressed")}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 20,
+                      backgroundColor: "white",
+                    }}
+                  />
+                  <IconButton
+                    icon="tray-arrow-up"
+                    size={22}
+                    onPress={() => navigation.navigate('Home')}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 70,
+                      backgroundColor: "white",
+                    }}
+                  />
+
+                  <IconButton
+                    icon="arrow-left"
+                    size={22}
+                    onPress={() => console.log("Pressed")}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 350,
+                      backgroundColor: "white",
+                    }}
+                  />
+                </View>
+          <Image  source={{ uri: x.Url4 }} style={styles.img} />
+                <View>
+                  <IconButton
+                    icon="cards-heart-outline"
+                    size={22}
+                    onPress={() => console.log("Pressed")}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 20,
+                      backgroundColor: "white",
+                    }}
+                  />
+                  <IconButton
+                    icon="tray-arrow-up"
+                    size={22}
+                    onPress={() => navigation.navigate('Home')}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 70,
+                      backgroundColor: "white",
+                    }}
+                  />
+
+                  <IconButton
+                    icon="arrow-left"
+                    size={22}
+                    onPress={() => console.log("Pressed")}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 350,
+                      backgroundColor: "white",
+                    }}
+                  />
+                </View>
+          <Image  source={{ uri: x.Url5 }} style={styles.img} />
+                <View>
+                  <IconButton
+                    icon="cards-heart-outline"
+                    size={22}
+                    onPress={() => console.log("Pressed")}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 20,
+                      backgroundColor: "white",
+                    }}
+                  />
+                  <IconButton
+                    icon="tray-arrow-up"
+                    size={22}
+                    onPress={() => navigation.navigate('Home')}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 70,
+                      backgroundColor: "white",
+                    }}
+                  />
+
+                  <IconButton
+                    icon="arrow-left"
+                    size={22}
+                    onPress={() => console.log("Pressed")}
+                    iconColor="#222"
+                    style={{
+                      position: "absolute",
+                      top: 30,
+                      right: 350,
+                      backgroundColor: "white",
+                    }}
+                  />
+                </View>
+            {/* {imgs.map((image, index) => (
               <>
                 <Image key={index} source={{ uri: image }} style={styles.img} />
                 <View>
@@ -79,12 +281,12 @@ export default function DetCard(navigation) {
                   />
                 </View>
               </>
-            ))}
+            ))} */}
           </ScrollView>
           <View style={styles.pagination}>
-            {imgs.map((i, k) => (
+            {/* {imgs.map((i, k) => (
               <Text style={styles.pagingText}>⬤</Text>
-            ))}
+            ))} */}
           </View>
         </View>
 
@@ -92,7 +294,7 @@ export default function DetCard(navigation) {
         <View style={styles.details}>
           <Text style={{ fontSize: 25, fontWeight: "bold" }}>
             <IconButton icon="translate" size={25} iconColor="#222" />
-            Luxury suite overlooking the Wadden Sea, Harlingen
+            {x.title}
           </Text>
           <View
             style={{
@@ -127,7 +329,7 @@ export default function DetCard(navigation) {
           </View>
           <View style={{ position: "relative", bottom: 15 }}>
             <Text style={{ color: "gray" }}>
-              Harlingen, Friseland, Netherlands
+              {x.address}
             </Text>
           </View>
         </View>
@@ -146,7 +348,7 @@ export default function DetCard(navigation) {
             }}
           >
             <Text style={{ fontSize: 22, fontWeight: "bold", flexBasis: 300 }}>
-              Tower hosted by Marcel & Linda{" "}
+              Tower hosted by {x.name}{" "}
             </Text>
 
             <Avatar.Image size={55} source={require("../assets/avatar1.jpg")} />
@@ -164,7 +366,7 @@ export default function DetCard(navigation) {
         {/* third paragraph */}
         <View style={styles.details}>
           <List.Item
-            title="Marcel & Linda is a Superhost"
+            title=" a Superhost"
             description="Superhosts are experienced, highly rated hosts who are commited to providing great stays for their guests"
             left={(props) => <List.Icon {...props} icon="medal" />}
           />
@@ -228,10 +430,7 @@ export default function DetCard(navigation) {
             left={(props) => <List.Icon {...props} icon="translate" />}
           />
           <Text style={{ fontSize: 16 }}>
-            The luxurious spacious suite is furnished with a cozy seating area,
-            flat-screen TV, minibar, double box spring, double sink, jacuzzi,
-            hairdryer, bathroom with spacious rain shower and toilet. A luxury
-            breakfast is served every morning..
+            {x.description}
           </Text>
           <Text
             style={{
@@ -364,7 +563,7 @@ export default function DetCard(navigation) {
           <Text
             style={{ fontSize: 16, fontWeight: "bold", paddingVertical: 10 }}
           >
-            Harlingen, Friseland, Netherlands
+            {x.address}
           </Text>
 
           <Text style={{ fontSize: 16 }}>
@@ -402,7 +601,7 @@ export default function DetCard(navigation) {
               style={{ position: "relative", bottom: 7 }}
             />
             <Text style={{ fontWeight: "bold", fontSize: 22 }}>
-              4.98 . 47 reviews{" "}
+              4.98 . {x.comments.length} reviews{" "}
             </Text>
           </View>
           <ScrollView horizontal>
@@ -801,8 +1000,8 @@ export default function DetCard(navigation) {
       <View style={{padding:20, borderTopColor:'lightgray', borderStyle:'solid', borderWidth:1}}>
         <View style={{flexDirection:'row', justifyContent:'space-between'}}>
           <View>
-          <Text style={{fontWeight:'bold', fontSize:16}}> $327 <Text style={{fontWeight:'normal'}}> night</Text></Text>
-          <Text style={{textDecorationLine:'underline', fontWeight:'bold', fontSize:16, paddingLeft:5}}>6-11 Nov</Text>
+          <Text style={{fontWeight:'bold', fontSize:16}}> {x.price} <Text style={{fontWeight:'normal'}}> night</Text></Text>
+          <Text style={{textDecorationLine:'underline', fontWeight:'bold', fontSize:16, paddingLeft:5}}>{d.getDate()}-{d.getMonth()+1}   Date</Text>
           </View>
           <Button mode="contained" style={{backgroundColor:'#E61E4D', borderRadius:8, padding:2 }} onPress={() => console.log('Pressed')}> Reserve</Button>
           
