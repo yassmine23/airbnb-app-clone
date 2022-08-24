@@ -1,12 +1,15 @@
-import * as React from "react";
+import React, { useState, useEffect } from 'react';
 import { View,ScrollView , StyleSheet ,Text ,TextInput , SafeAreaView,  Alert  } from "react-native";
 import { Button } from 'react-native-paper';
 
+
 const Signup = () => {
-  const [name, setName] = React.useState("");
-  const [Password, setPassword] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [age, setAge] = React.useState("");
+
+
+  const [name, setName] = useState("");
+  const [Password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [age, setAge] = useState("");
   return (
     <ScrollView style={styles.container}>
         <Text  style={styles.title}>Sign up</Text>
@@ -37,7 +40,9 @@ const Signup = () => {
         
         
      
-        <Button    style={styles.buttonlog}  mode="contained" onPress={() => Alert.alert('Simple Button pressed')}>
+        <Button    style={styles.buttonlog}  mode="contained" onPress={() => Alert.alert('Simple Button pressed')}>save
+
+        </Button>
     </ScrollView>
   );
 };
