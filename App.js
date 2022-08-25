@@ -7,7 +7,6 @@ import Map from "./pages/Map";
 import Profile from "./pages/Profile";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'; 
-
 import  { db,auth, app } from "./components/firebaseConfig";
 import { useEffect, useState } from "react";
 const Stack = createNativeStackNavigator();
