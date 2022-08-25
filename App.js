@@ -22,8 +22,8 @@ import Login from './components/login/login';
 import "firebase/auth";
 import Signup from './components/signup/signup';
 import { Provider } from "react-native-paper";
-import {store} from "./Redux/store";
 import { onAuthStateChanged ,getAuth} from "firebase/auth";
+import LoginScreen from "./components/signup/signupuser";
 
 const Tab = createBottomTabNavigator();
 
@@ -42,7 +42,7 @@ export default function App() {
           console.log(auth.currentUser.email)
         } else {
           setIsLogged(false);
-          console.log(auth.currentUser.email)
+          console.log("auth.currentUser.email")
 
         }
       })
@@ -198,8 +198,8 @@ export default function App() {
           }}
         />: 
         <Tab.Screen
-        name="Login"
-        component={Login}
+        name="LoginScreen"
+        component={LoginScreen}
         options={{
           title: "",
           tabBarLabel: "Login",

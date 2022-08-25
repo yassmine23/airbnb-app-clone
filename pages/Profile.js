@@ -1,16 +1,21 @@
 import React from "react";
-import { ScrollView, View, Text, StyleSheet } from "react-native";
+import { ScrollView, View, Text, StyleSheet, Button } from "react-native";
 import { Avatar, Divider, IconButton, List } from "react-native-paper";
+import { app } from "../components/firebaseConfig";
 
+// import  { db,auth, app } from "./components/firebaseConfig";
+import { getAuth } from 'firebase/auth';
 
 export default function Profile() {
+  const auth = getAuth(app);
+
   return ( <>
     <ScrollView>
+    {/* <Button  title="Log Out" onPress={() =>auth.signOut()}/> */}
+
       <View style={{ padding: 20 }}>
         <Avatar.Image size={62} source={require("../assets/rev2.jpg")} />
-        <Text style={{ fontSize: 30, fontWeight: "bold", paddingBottom: 5 }}>
-          Yasmin
-        </Text>
+        <Text style={{ fontSize: 30, fontWeight: "bold", paddingBottom: 5 }}> hello  </Text>
         <Text
           style={{
             fontSize: 18,
@@ -243,6 +248,7 @@ export default function Profile() {
             position:'relative',
             bottom:20
           }}
+          onPress={() =>auth.signOut()}
         >
           Log out
         </Text>
