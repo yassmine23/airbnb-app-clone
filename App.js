@@ -24,7 +24,6 @@ import Signup from './components/signup/signup';
 import { Provider } from "react-native-paper";
 import { onAuthStateChanged ,getAuth} from "firebase/auth";
 import LoginScreen from "./components/signup/signupuser";
-import { MassageProfile } from "./pages/Profile/loginprofile";
 
 const Tab = createBottomTabNavigator();
 
@@ -200,7 +199,7 @@ export default function App() {
         />: 
         <Tab.Screen
         name="LoginScreen"
-        component={MassageProfile}
+        component={LoginScreen}
         options={{
           title: "",
           tabBarLabel: "Login",
