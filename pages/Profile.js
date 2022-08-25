@@ -6,7 +6,7 @@ import { app } from "../components/firebaseConfig";
 // import  { db,auth, app } from "./components/firebaseConfig";
 import { getAuth } from 'firebase/auth';
 
-export default function Profile() {
+export  default function Profile() {
   const auth = getAuth(app);
 
   return ( <>
