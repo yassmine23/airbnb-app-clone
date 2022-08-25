@@ -1,73 +1,70 @@
 import * as React from "react";
-import { View , StyleSheet ,Text ,TextInput ,  SafeAreaView,  Alert  } from "react-native";
-import { Button } from 'react-native-paper';
+import {signInWithEmailAndPassword } from 'firebase/auth';
+import { initializeApp } from "firebase/app";
+import {createUserWithEmailAndPassword } from 'firebase/auth';
+import { collection, doc, setDoc, getDoc, getDocs } from "firebase/firestore";
+import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
+import { db, auth} from "../configuration";
 
 const Login = () => {
-  const [text, setText] = React.useState("");
-  const [Password, setPassword] = React.useState("");
-  const changes=(e)=>{
-    if(e.target.name === "text"){
-      setText(e.target.value)
-    }else if(e.target.name === "Password"){
-      setPassword(e.target.value)
-    
-    }
-  }
+  const [mail,setMail]=React.useState("")
+  const [pass,setPass]=React.useState("")
+
 
   return (
-    <View style={styles.container}>
-        <Text  style={styles.title}>Log in</Text>
-
-        <Text>E-mail</Text>
-        <TextInput
-        style={styles.extinput}
-        value={text}
-        onChangeText={(text) => setText(text)}
-        />
-
-        <Text>Password</Text>
-        <TextInput
-        style={styles.extinput}
-        value={Password} secureTextEntry={true} onChangeText={(Password) => setPassword(Password)} />
+    <View style={styles.container}>  
      
-        <Button style={styles.buttonlog}  mode="contained" onPress={() => Alert.alert('Simple Button pressed')}>
-  Log in
-  </Button>
-    </View>
-  );
+    <TextInput
+      style={styles.inputStyle}
+      placeholder="Email"
+    />
+    <TextInput
+      style={styles.inputStyle}
+      placeholder="Password"
+      maxLength={15}
+      secureTextEntry={true}
+    />   
+    <Button
+      color="#f52e57"
+      title="Log in"
+    />
+                            
+  </View>
+);
 };
-const styles = StyleSheet.create({
-    container: {
-    flex: 1,
-  
-    margin: 20,
-    },
-    title: {
-    textAlign: 'center',
-    marginTop:'4%',
-    marginBottom:'10%',
-    fontSize:23,
-    
-    },
-    extinput: {
-        textAlign: 'center',
-        marginTop:'1%',
-        marginBottom:'5%',
-        fontSize:20,
-        textAlign:"left",
-        height: 50,
-        padding:5,
-        borderBottomWidth: 1,
-        borderColor:"#f52e57"
-        
-    },
-    buttonlog: {
-        marginTop:'6%',
-        marginBottom:'3%',
-        backgroundColor:"#f52e57",
-        fontSize:20,
-    }
 
+const styles = StyleSheet.create({
+container: {
+flex: 1,
+display: "flex",
+flexDirection: "column",
+justifyContent: "center",
+padding: 35,
+backgroundColor: '#fff'
+},
+inputStyle: {
+width: '100%',
+marginBottom: 15,
+paddingBottom: 15,
+alignSelf: "center",
+borderColor: "#ccc",
+borderBottomWidth: 1
+},
+loginText: {
+color: '#3740FE',
+marginTop: 25,
+textAlign: 'center'
+},
+preloader: {
+left: 0,
+right: 0,
+top: 0,
+bottom: 0,
+position: 'absolute',
+alignItems: 'center',
+justifyContent: 'center',
+backgroundColor: '#fff'
+}
 });
 
 export default Login;

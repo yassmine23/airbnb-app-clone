@@ -1,7 +1,12 @@
 
 import {getFirestore} from "firebase/firestore"
 import { initializeApp } from "firebase/app";
-import { getAuth} from "firebase/auth";
+import {
+  getAuth,
+  onAuthStateChanged,
+  FacebookAuthProvider,
+  signInWithCredential,
+} from 'firebase/auth';
 
 const firebaseConfig = {
 
@@ -13,9 +18,12 @@ const firebaseConfig = {
     appId: "1:334551186520:web:1527e4756485e8561a5e2d"
 };
 let app;
-app = initializeApp(firebaseConfig);
+app =initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+
+// Listen for authentication state to change.
+
 
 export { auth };
 export { db };

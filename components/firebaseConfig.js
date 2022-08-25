@@ -2,10 +2,11 @@
 // import firebase from 'firebase/app';
 // // import '@firebase/firestore';
 // // import {firebase} from "firebase/compat/app";
-// // import { firebase } from "@firebase/app";
+// import { firebase } from "@firebase/app";
 // import "firebase/compat/auth";
 // import "firebase/compat/firestore";
 // import { initializeApp } from 'firebase/app';
+import { useEffect, useState } from "react";
 
 // const config={
 //     apiKey: "AIzaSyDc4pQ7M49mqJ4m9fa_EdCH_uUDSl00jVI",
@@ -26,13 +27,16 @@
 
 // Import the functions you need from the SDKs you need
 
-
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
 import {getFirestore} from "firebase/firestore"
 
 import { initializeApp } from "firebase/app";
 
-import { getAuth} from "firebase/auth";
+import { getAuth,onAuthStateChanged } from "firebase/auth";
+import "firebase/compat/firestore"
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -75,7 +79,6 @@ const firebaseConfig = {
 
 
 // Initialize Firebase
-
 let app;
 
 
@@ -83,8 +86,8 @@ let app;
 app = initializeApp(firebaseConfig);
 
 
+var isLoggedIn=false
 
-const auth = getAuth(app);
 
 
 
@@ -96,7 +99,7 @@ const db = getFirestore(app);
 
 
 
-export { auth };
+export { app };
 
 export { db };
 

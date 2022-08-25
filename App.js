@@ -1,6 +1,5 @@
 import { StyleSheet, View, FlatList, ScrollView } from "react-native";
 import DetCard from "./components/DetCard";
-
 import Wishlist from "./pages/Wishlist";
 import Trips from "./pages/Trips";
 import HomePage from "./pages/HomePage";
@@ -9,7 +8,7 @@ import Profile from "./pages/Profile";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'; 
 
-import  { db } from "./components/firebaseConfig";
+import  { db,auth, app } from "./components/firebaseConfig";
 import { useEffect, useState } from "react";
 const Stack = createNativeStackNavigator();
 import { collection, doc, setDoc, getDoc, getDocs } from "firebase/firestore";
@@ -20,11 +19,41 @@ import { styles } from "./node_modules/react-native-actions-sheet/dist/src/style
 import Inbox from "./pages/Inbox";
 import Login from './components/login/login';
 
+import "firebase/auth";
+import Signup from './components/signup/signup';
+import { Provider } from "react-native-paper";
+import {store} from "./Redux/store";
+import { onAuthStateChanged ,getAuth} from "firebase/auth";
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLogged] = useState(false)
+
+  const auth = getAuth(app);
+
+  useEffect(() => {
+
+    async function checkUser() {
+
+      onAuthStateChanged(auth,(user) => {
+        if(user != null) {
+          setIsLogged(true);
+          console.log(auth.currentUser.email)
+        } else {
+          setIsLogged(false);
+          console.log(auth.currentUser.email)
+
+        }
+      })
+    }
+
+    checkUser();
+
+  }, []);
+ 
+
+
 
   const [newArr,setNewArr]=useState([])
   const getAllMobiles = () => {
@@ -151,7 +180,7 @@ export default function App() {
             ),
           }}
         />
- {isLoggedIn ?
+ {isLoggedIn?
         <Tab.Screen
           name="profile"
           component={Profile}
